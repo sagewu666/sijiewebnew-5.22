@@ -276,7 +276,7 @@ const App: React.FC = () => {
   ];
 
   const toolsList = [
-    "Figma", "Videoleap", "Canva", "Google AI Studio", "HTML, CSS, JavaScript"
+    "Figma", "Videoleap", "Canva", "Google AI Studio", "HTML, CSS, JavaScript", "Adobe Creative Cloud"
   ];
 
   const handleNavigate = (sectionId: string) => {
