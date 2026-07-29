@@ -21,6 +21,20 @@ const App: React.FC = () => {
   // Initial Data
   const initialProjectsData: Project[] = [
     {
+      id: "nyc-dof-cca",
+      title: "NYC DOF Cooperative & Condominium Abatement (CCA) Online Filing Video Series",
+      category: "Instructional Video Series",
+      description: "Developed a public-facing instructional video series to guide property owners and managing agents through the Cooperative and Condominium Abatement (CCA) online filing process.",
+      points: [
+        "Developed a public-facing instructional video series to guide property owners and managing agents through the Cooperative and Condominium Abatement (CCA) online filing process.",
+        "Designed learner-centered instructional content that transformed complex tax policies and digital workflows into clear, accessible learning experiences."
+      ],
+      liveDemo: "",
+      videoUrl: "",
+      tech: ["Instructional Design", "Video Production"],
+      placeholderImg: ""
+    },
+    {
       id: "learning-synapse",
       title: "SYNAPSE",
       category: "Learning Engine",
@@ -235,6 +249,17 @@ const App: React.FC = () => {
 
   const experienceData: Experience[] = [
     {
+      role: "PEA Summer Graduate Intern",
+      organization: "New York City Department of Finance",
+      location: "New York, NY",
+      period: "06/2026 - Present",
+      points: [
+        "Led the development of internal and public-facing instructional videos by authoring over 30 scripts, producing end-to-end video content, and creating the Video Style Guide to standardize visual design and production workflows.",
+        "Collaborated with subject matter experts (SMEs), a graphic designer, and cross-functional stakeholders through multiple review cycles to gather requirements, incorporate feedback, and ensure content accuracy, consistency, and policy compliance.",
+        "Mentored and supervised a high school intern by assigning production tasks, providing constructive feedback, and supporting the development of high-quality instructional videos."
+      ]
+    },
+    {
       role: "Volunteer Learning Experience Designer",
       organization: "Marlene Yu Museum",
       location: "New York, NY",
@@ -272,6 +297,7 @@ const App: React.FC = () => {
     "Learner Analysis and Content Optimization",
     "Information and Visual Design",
     "Writing and Presentation of Learning Material",
+    "Video Editing",
     "Vibe Coding"
   ];
 
