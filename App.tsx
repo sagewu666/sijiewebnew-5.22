@@ -22,7 +22,7 @@ const App: React.FC = () => {
   const initialProjectsData: Project[] = [
     {
       id: "nyc-dof-cca",
-      title: "NYC DOF Cooperative & Condominium Abatement (CCA) Online Filing Video Series",
+      title: "PEA Summer Graduate Intern",
       category: "Instructional Video Series",
       description: "Developed a public-facing instructional video series to guide property owners and managing agents through the Cooperative and Condominium Abatement (CCA) online filing process.",
       points: [
@@ -249,10 +249,10 @@ const App: React.FC = () => {
 
   const experienceData: Experience[] = [
     {
-      role: "Instructional Video Designer",
+      role: "PEA Summer Graduate Intern",
       organization: "Department of Finance",
       location: "",
-      period: "",
+      period: "06/2026 - 08/2026",
       points: [
         "Led the development of internal and public-facing instructional videos by authoring scripts, producing end-to-end video content, and creating the Video Style Guide to standardize visual design and production workflows.",
         "Collaborated with subject matter experts (SMEs), a graphic designer, and cross-functional stakeholders through multiple review cycles to gather requirements, incorporate feedback, and ensure content accuracy, consistency, and policy compliance.",
