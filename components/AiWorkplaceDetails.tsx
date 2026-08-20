@@ -21,7 +21,7 @@ export const AiWorkplaceDetails: React.FC<AiWorkplaceDetailsProps> = ({ onBack }
         </button>
 
         <header className="mb-16 reveal active">
-          <div className="inline-flex items-center gap-3 px-5 py-2 mb-8 rounded-full glass-card text-[11px] font-black tracking-[0.4em] text-emerald-600 uppercase border border-emerald-500/30">
+          <div className="inline-flex items-center gap-3 px-5 py-2 mb-8 rounded-full bg-white border border-slate-200 shadow-sm text-[11px] font-black tracking-[0.4em] text-emerald-600 uppercase border border-emerald-500/30">
             <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
             Instructional Design Module
           </div>
@@ -44,7 +44,7 @@ export const AiWorkplaceDetails: React.FC<AiWorkplaceDetailsProps> = ({ onBack }
         </header>
 
         <div className="space-y-16">
-          <section className="glass-card p-10 md:p-16 rounded-[40px] border border-white/50 hover-3d reveal active">
+          <section className="bg-white border border-slate-200 shadow-sm p-10 md:p-16 rounded-[40px] border border-white/50 hover-3d reveal active">
             <h2 className="text-3xl font-black font-heading text-emerald-600 mb-6 font-bold flex items-center gap-4">
                Why This Design Works
             </h2>
@@ -53,7 +53,7 @@ export const AiWorkplaceDetails: React.FC<AiWorkplaceDetailsProps> = ({ onBack }
             </p>
           </section>
 
-          <section className="glass-card p-10 md:p-16 rounded-[40px] border border-white/50 hover-3d reveal active">
+          <section className="bg-white border border-slate-200 shadow-sm p-10 md:p-16 rounded-[40px] border border-white/50 hover-3d reveal active">
             <h2 className="text-3xl font-black font-heading text-emerald-600 mb-6 font-bold">
                Learner-Centered Design
             </h2>
@@ -69,7 +69,7 @@ export const AiWorkplaceDetails: React.FC<AiWorkplaceDetailsProps> = ({ onBack }
           </section>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-             <section className="glass-card p-10 rounded-[40px] border border-white/50 hover-3d reveal active">
+             <section className="bg-white border border-slate-200 shadow-sm p-10 rounded-[40px] border border-white/50 hover-3d reveal active">
                <h2 className="text-2xl font-black font-heading text-slate-900 mb-4 font-bold">
                   Modular Structure for Asynchronous Learning
                </h2>
@@ -84,7 +84,7 @@ export const AiWorkplaceDetails: React.FC<AiWorkplaceDetailsProps> = ({ onBack }
                </p>
              </section>
 
-             <section className="glass-card p-10 rounded-[40px] border border-white/50 hover-3d reveal active">
+             <section className="bg-white border border-slate-200 shadow-sm p-10 rounded-[40px] border border-white/50 hover-3d reveal active">
                <h2 className="text-2xl font-black font-heading text-slate-900 mb-4 font-bold">
                   Clear Expectations & Scaffolding
                </h2>
@@ -100,7 +100,7 @@ export const AiWorkplaceDetails: React.FC<AiWorkplaceDetailsProps> = ({ onBack }
              </section>
           </div>
 
-          <section className="glass-card p-10 md:p-16 rounded-[40px] border border-white/50 hover-3d reveal active">
+          <section className="bg-white border border-slate-200 shadow-sm p-10 md:p-16 rounded-[40px] border border-white/50 hover-3d reveal active">
             <h2 className="text-3xl font-black font-heading text-emerald-600 mb-6 font-bold">
                Engagement Through Structured Interaction
             </h2>
@@ -119,7 +119,7 @@ export const AiWorkplaceDetails: React.FC<AiWorkplaceDetailsProps> = ({ onBack }
             </div>
           </section>
 
-          <section className="glass-card p-10 md:p-16 rounded-[40px] border border-white/50 hover-3d reveal active">
+          <section className="bg-white border border-slate-200 shadow-sm p-10 md:p-16 rounded-[40px] border border-white/50 hover-3d reveal active">
             <h2 className="text-3xl font-black font-heading text-emerald-600 mb-6 font-bold">
                Visible Instructor Presence & Alignment
             </h2>
@@ -134,7 +134,7 @@ export const AiWorkplaceDetails: React.FC<AiWorkplaceDetailsProps> = ({ onBack }
             </p>
           </section>
 
-          <section className="glass-card p-10 md:p-16 rounded-[40px] border border-white/50 hover-3d reveal active">
+          <section className="bg-white border border-slate-200 shadow-sm p-10 md:p-16 rounded-[40px] border border-white/50 hover-3d reveal active">
             <h2 className="text-3xl font-black font-heading text-emerald-600 mb-6 font-bold">
                Realistic Time on Task & Supportive Design
             </h2>

@@ -26,4 +26,7 @@ export interface Experience {
   location: string;
   period: string;
   points: string[];
+  videoUrl?: string;
+  tools?: string[];
+  platform?: string[];
 }

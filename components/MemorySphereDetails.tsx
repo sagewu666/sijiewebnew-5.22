@@ -14,22 +14,22 @@ export const MemorySphereDetails: React.FC<MemorySphereDetailsProps> = ({ onBack
       <div className="max-w-5xl mx-auto">
         <button 
           onClick={onBack}
-          className="relative z-50 group flex items-center gap-3 text-blue-600 font-bold tracking-[0.2em] uppercase mb-12 hover:text-blue-800 transition-colors cursor-pointer"
+          className="relative z-50 group flex items-center gap-3 text-indigo-600 font-bold tracking-[0.2em] uppercase mb-12 hover:text-indigo-800 transition-colors cursor-pointer"
         >
           <svg className="w-6 h-6 transform group-hover:-translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
           Back to Portfolio
         </button>
 
         <header className="mb-16 reveal active">
-          <div className="inline-flex items-center gap-3 px-5 py-2 mb-8 rounded-full glass-card text-[11px] font-black tracking-[0.4em] text-blue-600 uppercase border border-blue-500/30">
-            <span className="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
+          <div className="inline-flex items-center gap-3 px-5 py-2 mb-8 rounded-full bg-white border border-slate-200 shadow-sm text-[11px] font-black tracking-[0.4em] text-indigo-600 uppercase border border-indigo-500/30">
+            <span className="w-2.5 h-2.5 rounded-full bg-indigo-500 animate-pulse"></span>
             Case Study
           </div>
           <h1 className="text-5xl md:text-7xl font-black font-heading leading-tight mb-6 drop-shadow-xl text-slate-900">
             MemorySphere: <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Travel Memory & Place Exploration</span>
           </h1>
-          <p className="text-2xl text-slate-600 font-light tracking-wide border-l-4 border-blue-500 pl-6 py-2">
+          <p className="text-2xl text-slate-600 font-light tracking-wide border-l-4 border-indigo-500 pl-6 py-2">
             A Gesture Based Interactive Platform for Travel Memory
           </p>
         </header>
@@ -47,8 +47,8 @@ export const MemorySphereDetails: React.FC<MemorySphereDetailsProps> = ({ onBack
         </div>
 
         <div className="space-y-16">
-          <section className="glass-card p-10 md:p-16 rounded-[40px] border border-white/50 hover-3d reveal active">
-            <h2 className="text-3xl font-black font-heading text-blue-600 mb-6 font-bold flex items-center gap-4">
+          <section className="bg-white border border-slate-200 shadow-sm p-10 md:p-16 rounded-[40px] border border-white/50 hover-3d reveal active">
+            <h2 className="text-3xl font-black font-heading text-indigo-600 mb-6 font-bold flex items-center gap-4">
                Problem Space and Rationale
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed font-light mb-6">
@@ -62,8 +62,8 @@ export const MemorySphereDetails: React.FC<MemorySphereDetailsProps> = ({ onBack
             </p>
           </section>
 
-          <section className="glass-card p-10 md:p-16 rounded-[40px] border border-white/50 hover-3d reveal active">
-            <h2 className="text-3xl font-black font-heading text-blue-600 mb-6 font-bold">
+          <section className="bg-white border border-slate-200 shadow-sm p-10 md:p-16 rounded-[40px] border border-white/50 hover-3d reveal active">
+            <h2 className="text-3xl font-black font-heading text-indigo-600 mb-6 font-bold">
                Background Research
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed font-light mb-4">
@@ -74,8 +74,8 @@ export const MemorySphereDetails: React.FC<MemorySphereDetailsProps> = ({ onBack
             </p>
           </section>
 
-          <section className="glass-card p-10 md:p-16 rounded-[40px] border border-white/50 hover-3d reveal active">
-            <h2 className="text-3xl font-black font-heading text-blue-600 mb-6 font-bold">
+          <section className="bg-white border border-slate-200 shadow-sm p-10 md:p-16 rounded-[40px] border border-white/50 hover-3d reveal active">
+            <h2 className="text-3xl font-black font-heading text-indigo-600 mb-6 font-bold">
                Product & Computational Concepts
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed font-light mb-6">
@@ -98,8 +98,8 @@ export const MemorySphereDetails: React.FC<MemorySphereDetailsProps> = ({ onBack
             </div>
           </section>
 
-          <section className="glass-card p-10 md:p-16 rounded-[40px] border border-white/50 hover-3d reveal active">
-            <h2 className="text-3xl font-black font-heading text-blue-600 mb-6 font-bold">
+          <section className="bg-white border border-slate-200 shadow-sm p-10 md:p-16 rounded-[40px] border border-white/50 hover-3d reveal active">
+            <h2 className="text-3xl font-black font-heading text-indigo-600 mb-6 font-bold">
                Task Analysis & UX Goals
             </h2>
             <ul className="list-disc pl-5 space-y-3 text-slate-600 font-light text-lg">
@@ -110,8 +110,8 @@ export const MemorySphereDetails: React.FC<MemorySphereDetailsProps> = ({ onBack
             </ul>
           </section>
 
-          <section className="glass-card p-10 md:p-16 rounded-[40px] border border-white/50 hover-3d reveal active">
-            <h2 className="text-3xl font-black font-heading text-blue-600 mb-6 font-bold">
+          <section className="bg-white border border-slate-200 shadow-sm p-10 md:p-16 rounded-[40px] border border-white/50 hover-3d reveal active">
+            <h2 className="text-3xl font-black font-heading text-indigo-600 mb-6 font-bold">
                Evaluation & Iteration
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed font-light mb-6">
@@ -119,15 +119,15 @@ export const MemorySphereDetails: React.FC<MemorySphereDetailsProps> = ({ onBack
             </p>
             <ul className="space-y-4 mb-6">
                <li className="flex gap-4">
-                  <span className="text-blue-500 font-bold mt-1">1.</span>
+                  <span className="text-indigo-500 font-bold mt-1">1.</span>
                   <p className="text-slate-600 font-light"><strong>Gesture Refinement:</strong> Similar inputs caused recognition errors. Overlapping controls were replaced with distinct hand signs (e.g., using a heart shape for travel logs), alongside a one-second recognition delay to boost input accuracy.</p>
                </li>
                <li className="flex gap-4">
-                  <span className="text-blue-500 font-bold mt-1">2.</span>
+                  <span className="text-indigo-500 font-bold mt-1">2.</span>
                   <p className="text-slate-600 font-light"><strong>Accessibility:</strong> Implemented a "My Collection" panel, a visual instruction guide mapping gestures to functions, and a classic mouse-input fallback ("My Memory") for broader usability.</p>
                </li>
                <li className="flex gap-4">
-                  <span className="text-blue-500 font-bold mt-1">3.</span>
+                  <span className="text-indigo-500 font-bold mt-1">3.</span>
                   <p className="text-slate-600 font-light"><strong>Contextual Depth:</strong> Integrated Google Maps links to tie virtual exploration back to real-world navigation, alongside searchable metadata options for people and dates.</p>
                </li>
             </ul>

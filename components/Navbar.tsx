@@ -32,9 +32,9 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 px-6 py-4 md:px-12 flex justify-center">
       <div className="w-full max-w-7xl flex items-center justify-between">
-        <div onClick={() => scrollTo('home')} className="text-xl font-black font-heading tracking-tighter text-slate-900 bg-white/60 px-4 py-2 rounded-2xl border border-white/50 shadow-sm backdrop-blur-md uppercase hover:scale-105 transition-transform cursor-pointer">Sijie Wu</div>
+        <div onClick={() => scrollTo('home')} className="text-xl font-black font-heading tracking-tighter text-slate-900 bg-white px-4 py-2 rounded-2xl border border-slate-200 shadow-sm   uppercase hover:scale-105 transition-transform cursor-pointer">Sijie Wu</div>
         
-        <div className="hidden md:flex items-center gap-2 p-1.5 bg-white/60 backdrop-blur-md rounded-2xl border border-white/50 shadow-lg">
+        <div className="hidden md:flex items-center gap-2 p-1.5 bg-white   rounded-2xl border border-slate-200 shadow-lg">
           {navItems.map((item) => (
             <button
               key={item.id}
@@ -51,7 +51,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => 
         </div>
 
         <div className="md:hidden">
-          <div className="bg-blue-500/80 backdrop-blur-md border border-blue-400/50 text-white px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-md">
+          <div className="bg-blue-600   border border-blue-400/30 text-white px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-md">
             {activeSection}
           </div>
         </div>

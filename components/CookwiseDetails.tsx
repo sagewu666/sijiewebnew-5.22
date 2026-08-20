@@ -14,15 +14,15 @@ export const CookwiseDetails: React.FC<CookwiseDetailsProps> = ({ onBack }) => {
       <div className="max-w-5xl mx-auto">
         <button 
           onClick={onBack}
-          className="relative z-50 group flex items-center gap-3 text-blue-600 font-bold tracking-[0.2em] uppercase mb-12 hover:text-blue-800 transition-colors cursor-pointer"
+          className="relative z-50 group flex items-center gap-3 text-indigo-600 font-bold tracking-[0.2em] uppercase mb-12 hover:text-indigo-800 transition-colors cursor-pointer"
         >
           <svg className="w-6 h-6 transform group-hover:-translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
           Back to Portfolio
         </button>
 
         <header className="mb-16 reveal active">
-          <div className="inline-flex items-center gap-3 px-5 py-2 mb-8 rounded-full glass-card text-[11px] font-black tracking-[0.4em] text-blue-600 uppercase border border-blue-500/30">
-            <span className="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
+          <div className="inline-flex items-center gap-3 px-5 py-2 mb-8 rounded-full bg-white border border-slate-200 shadow-sm text-[11px] font-black tracking-[0.4em] text-indigo-600 uppercase border border-indigo-500/30">
+            <span className="w-2.5 h-2.5 rounded-full bg-indigo-500 animate-pulse"></span>
             Case Study
           </div>
           <h1 className="text-5xl md:text-7xl font-black font-heading leading-tight mb-6 drop-shadow-xl text-slate-900">
@@ -47,7 +47,7 @@ export const CookwiseDetails: React.FC<CookwiseDetailsProps> = ({ onBack }) => {
         </div>
 
         <div className="space-y-16">
-          <section className="glass-card p-10 md:p-16 rounded-[40px] border border-white/50 hover-3d reveal active">
+          <section className="bg-white border border-slate-200 shadow-sm p-10 md:p-16 rounded-[40px] border border-white/50 hover-3d reveal active">
             <h2 className="text-3xl font-black font-heading text-orange-600 mb-6 font-bold flex items-center gap-4">
                Overview
             </h2>
@@ -62,7 +62,7 @@ export const CookwiseDetails: React.FC<CookwiseDetailsProps> = ({ onBack }) => {
             </p>
           </section>
 
-          <section className="glass-card p-10 md:p-16 rounded-[40px] border border-white/50 hover-3d reveal active">
+          <section className="bg-white border border-slate-200 shadow-sm p-10 md:p-16 rounded-[40px] border border-white/50 hover-3d reveal active">
             <h2 className="text-3xl font-black font-heading text-orange-600 mb-8 font-bold">
                Design Structure
             </h2>

@@ -48,14 +48,14 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, onViewProject }) =
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 items-start relative">
       {projects.map((project, index) => (
-        <div key={project.id} className={`flex flex-col reveal hover-3d project-card-${index} bg-white/40 p-6 md:p-8 rounded-[40px] glass-card border border-white/50 shadow-sm`}>
+        <div key={project.id} className={`flex flex-col h-full reveal hover-3d project-card-${index} bg-white border border-amber-100 shadow-sm p-6 md:p-8 rounded-[40px]`}>
           {(project.placeholderImg || project.videoUrl) && (
             <div 
               id={`container-${project.id}`}
-              className="relative w-full overflow-hidden rounded-[32px] border border-white/50 shadow-md bg-black group transition-all duration-700"
+              className="relative w-full overflow-hidden rounded-[32px] border border-amber-100 shadow-md bg-black group transition-all duration-700"
               style={{ 
-                aspectRatio: project.id === 'snap-story' ? '9 / 16' : '16 / 9',
-                maxHeight: project.id === 'snap-story' ? '800px' : 'none'
+                aspectRatio: '16 / 9',
+                maxHeight: 'none'
               }}
             >
               {playingId === project.id && project.videoUrl ? (
@@ -84,13 +84,13 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, onViewProject }) =
                     <div className="flex gap-1.5 pointer-events-auto">
                       <button 
                         onClick={() => setPlayingId(null)}
-                        className="bg-black/40 hover:bg-black/80 backdrop-blur-md text-white text-[7px] font-black px-3 py-1.5 rounded-full transition-all border border-white/10 uppercase tracking-[0.3em]"
+                        className="bg-black/40 hover:bg-black/80   text-white text-[7px] font-black px-3 py-1.5 rounded-full transition-all border border-amber-100 uppercase tracking-[0.3em]"
                       >
                         Close
                       </button>
                       <button 
                         onClick={() => toggleFullscreen(project.id)}
-                        className="bg-black/40 hover:bg-black/80 backdrop-blur-md text-white text-[7px] font-black px-3 py-1.5 rounded-full transition-all border border-white/10 uppercase tracking-[0.3em]"
+                        className="bg-black/40 hover:bg-black/80   text-white text-[7px] font-black px-3 py-1.5 rounded-full transition-all border border-amber-100 uppercase tracking-[0.3em]"
                       >
                         Full
                       </button>
@@ -107,7 +107,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, onViewProject }) =
                     <img 
                       src={project.placeholderImg} 
                       alt={project.title} 
-                      className="w-full h-full object-cover opacity-90 group-hover:opacity-30 transition-all duration-1000 group-hover:scale-110" 
+                      className="w-full h-full object-cover opacity-90 group-hover:opacity-30 transition-all duration-1000 group-hover:scale-110"
                       onError={(e) => {
                         // Fallback if image fails
                         e.currentTarget.style.display = 'none';
@@ -117,15 +117,15 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, onViewProject }) =
                   
                   {/* Generation Indicator */}
                   {project.placeholderImg && project.placeholderImg.includes('unsplash') && project.genAiPrompt && (
-                     <div className="absolute top-4 right-4 bg-black/30 backdrop-blur-md text-white text-[8px] font-bold px-3 py-1 rounded-full uppercase tracking-widest animate-pulse border border-white/20">
+                     <div className="absolute top-4 right-4 bg-black/30   text-white text-[8px] font-bold px-3 py-1 rounded-full uppercase tracking-widest animate-pulse border border-white/20">
                        Generating AI Cover...
                      </div>
                   )}
 
                   {project.videoUrl && (
                     <div className="absolute inset-0 flex items-center justify-center z-20">
-                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white/60 backdrop-blur-3xl border border-white/80 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:bg-blue-500 transition-all duration-500 shadow-2xl">
-                        <svg className="w-8 h-8 md:w-10 md:h-10 text-blue-600 group-hover:text-white translate-x-1 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                      <div className="w-20 h-20 md:w-24 md:h-24 bg-white/10   border border-white/20 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:bg-amber-600 transition-all duration-500 shadow-2xl">
+                        <svg className="w-8 h-8 md:w-10 md:h-10 text-amber-600 group-hover:text-white translate-x-1 transition-colors" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M8 5v14l11-7z" />
                         </svg>
                       </div>
@@ -135,19 +135,18 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, onViewProject }) =
               )}
             </div>
           )}
-
-          <div className={`px-2 ${project.placeholderImg || project.videoUrl ? 'mt-10' : ''}`}>
+           <div className={`px-2 flex-1 flex flex-col ${project.placeholderImg || project.videoUrl ? 'mt-10' : ''}`}>
             <div className="flex items-center gap-4 mb-8">
-              <span className="text-[11px] font-black text-blue-600 tracking-[0.3em] uppercase bg-blue-100 px-4 py-1.5 rounded-xl border border-blue-200">
+              <span className="text-[11px] font-black text-amber-600 tracking-[0.3em] uppercase bg-amber-100 px-4 py-1.5 rounded-xl border border-amber-200">
                 {project.category}
               </span>
               <div className="h-[1px] flex-1 bg-slate-200"></div>
             </div>
             <h3 className="text-4xl font-black font-heading text-slate-900 mb-6 tracking-wide drop-shadow-sm">{project.title}</h3>
             <p className="text-slate-600 text-xl font-light leading-relaxed mb-10 tracking-wide">{project.description}</p>
-            <div className="flex flex-wrap gap-3 mb-10">
+            <div className="flex flex-wrap gap-3 mb-10 mt-auto">
               {project.tech.map(t => (
-                <span key={t} className="px-5 py-2 rounded-2xl border border-white/50 glass-card text-[10px] font-bold text-blue-600 uppercase tracking-[0.2em] shadow-sm hover:bg-blue-500 hover:text-white hover:scale-105 transition-all cursor-default bg-white/60">
+                <span key={t} className="px-5 py-2 rounded-2xl border border-amber-100 bg-white border border-amber-100 shadow-sm text-[10px] font-bold text-amber-600 uppercase tracking-[0.2em] shadow-sm hover:bg-amber-600 hover:text-white hover:border-amber-400/50 hover:scale-105 transition-all cursor-default bg-white">
                   {t}
                 </span>
               ))}
@@ -155,7 +154,7 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, onViewProject }) =
             {onViewProject && project.id !== 'nyc-dof-cca' && (
               <button 
                 onClick={() => onViewProject(project.id)}
-                className="group flex items-center gap-3 text-blue-600 font-bold tracking-[0.2em] uppercase hover:text-blue-800 transition-colors mt-4"
+                className="group flex items-center gap-3 text-amber-600 font-bold tracking-[0.2em] uppercase hover:text-amber-600 transition-colors mt-4"
               >
                 View Details
                 <svg className="w-6 h-6 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>

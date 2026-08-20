@@ -15,7 +15,7 @@ export const EducationSection: React.FC<EducationProps> = ({ items }) => {
       
       <div className="md:col-span-8 space-y-20">
         {items.map((item, idx) => (
-          <div key={idx} className="group relative glass-card p-8 rounded-[40px] border border-white/50 hover-3d shadow-sm">
+          <div key={idx} className="group relative bg-white border border-slate-200 shadow-sm p-8 rounded-[40px] hover-3d shadow-sm">
             <div className="relative">
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
                 <div>
@@ -25,11 +25,11 @@ export const EducationSection: React.FC<EducationProps> = ({ items }) => {
                   )}
                   <div className="flex items-center gap-2 mt-2">
                     <span className="text-blue-600 font-bold text-sm tracking-wide">{item.school}</span>
-                    <span className="text-slate-400">•</span>
-                    <span className="text-slate-500 text-xs font-medium uppercase tracking-[0.2em]">{item.location}</span>
+                    {item.location && <span className="text-slate-500">•</span>}
+                    {item.location && <span className="text-slate-400 text-xs font-medium uppercase tracking-[0.2em]">{item.location}</span>}
                   </div>
                 </div>
-                <div className="px-6 py-2 bg-blue-100 text-blue-700 rounded-full text-[10px] font-black uppercase tracking-[0.2em] border border-blue-200 mt-2 md:mt-0 shadow-sm whitespace-nowrap">
+                <div className="px-6 py-2 bg-blue-100 text-blue-600 rounded-full text-[10px] font-black uppercase tracking-[0.2em] border border-blue-200 mt-2 md:mt-0 shadow-sm whitespace-nowrap">
                   {item.year}
                 </div>
               </div>

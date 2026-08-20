@@ -30,9 +30,9 @@ const App: React.FC = () => {
         "Designed learner-centered instructional content that transformed complex tax policies and digital workflows into clear, accessible learning experiences."
       ],
       liveDemo: "",
-      videoUrl: "",
-      tech: ["Instructional Design", "Video Production"],
-      placeholderImg: ""
+      videoUrl: "https://www.youtube.com/watch?v=jVOfuIJJ9l8&t=6s",
+      tech: ["Instructional Design", "Video Production", "Adobe PR", "Adobe PS", "YouTube", "Public Service"],
+      placeholderImg: "https://img.youtube.com/vi/jVOfuIJJ9l8/maxresdefault.jpg"
     },
     {
       id: "learning-synapse",
@@ -221,16 +221,16 @@ const App: React.FC = () => {
 
   const educationData: Education[] = [
     {
-      degree: "M.A. Instructional Technology & Media (Candidate)",
-      school: "Teachers College, Columbia University",
-      location: "New York, NY",
+      degree: "M.A. Instructional Technology & Media",
+      school: "Columbia University",
+      location: "",
       year: "08/2025 - Present",
       details: ["GPA: 4.0/4.0", "Core Focus: Interactive Media Programming, Instructional Design Systems"]
     },
     {
       degree: "Exchange Student, Academic Study Abroad Program",
       school: "University of California, Irvine",
-      location: "Irvine, CA",
+      location: "",
       year: "09/2023 - 12/2023",
       details: ["GPA: 4.0/4.0", "Core Courses: Issues in K-12 Educ, Bilingual Education"]
     },
@@ -238,7 +238,7 @@ const App: React.FC = () => {
       degree: "Bachelor of Education",
       major: "Major: Preschool Education",
       school: "Shanghai Normal University",
-      location: "Shanghai, China",
+      location: "",
       year: "09/2021 - 06/2025",
       details: [
         "WES GPA: 3.64/4.0",
@@ -249,12 +249,12 @@ const App: React.FC = () => {
 
   const experienceData: Experience[] = [
     {
-      role: "PEA Summer Graduate Intern",
-      organization: "New York City Department of Finance",
-      location: "New York, NY",
-      period: "06/2026 - Present",
+      role: "Instructional Video Designer",
+      organization: "Department of Finance",
+      location: "",
+      period: "",
       points: [
-        "Led the development of internal and public-facing instructional videos by authoring over 30 scripts, producing end-to-end video content, and creating the Video Style Guide to standardize visual design and production workflows.",
+        "Led the development of internal and public-facing instructional videos by authoring scripts, producing end-to-end video content, and creating the Video Style Guide to standardize visual design and production workflows.",
         "Collaborated with subject matter experts (SMEs), a graphic designer, and cross-functional stakeholders through multiple review cycles to gather requirements, incorporate feedback, and ensure content accuracy, consistency, and policy compliance.",
         "Mentored and supervised a high school intern by assigning production tasks, providing constructive feedback, and supporting the development of high-quality instructional videos."
       ]
@@ -262,7 +262,7 @@ const App: React.FC = () => {
     {
       role: "Volunteer Learning Experience Designer",
       organization: "Marlene Yu Museum",
-      location: "New York, NY",
+      location: "",
       period: "02/2026 - 05/2026",
       points: [
         "Designed and developed an interactive self-guided tour web prototype for museum visitors, creating a digital platform to present artwork descriptions, background context, and extended content",
@@ -272,7 +272,7 @@ const App: React.FC = () => {
     {
       role: "Member",
       organization: "Snow Day Learning Lab",
-      location: "New York, NY",
+      location: "",
       period: "08/2025 - 03/2026",
       points: [
         "Participated in weekly lab meetings focused on educational technology, learning experience design, and discussion of current EdTech research and practice",
@@ -282,7 +282,7 @@ const App: React.FC = () => {
     {
       role: "Research Support for PhD Dissertation Project",
       organization: "Teachers College, Columbia University",
-      location: "New York, NY",
+      location: "",
       period: "10/2025 - 02/2026",
       points: [
         "Conducted qualitative analysis of dialogue and interaction data from Scratch based game creation sessions",
@@ -295,7 +295,8 @@ const App: React.FC = () => {
   const skillsList = [
     "Instructional Design and Training Content Development",
     "Learner Analysis and Content Optimization",
-    "Information and Visual Design",
+    "WCAG & Accessible Design",
+    "Cross-functional Collaboration",
     "Writing and Presentation of Learning Material",
     "Video Editing",
     "Vibe Coding"
@@ -330,9 +331,7 @@ const App: React.FC = () => {
 
   if (currentView === 'snapstory') {
     return (
-      <div className="flex flex-col w-full min-h-screen relative overflow-hidden bg-transparent">
-        <div className="bg-glow -top-32 -left-32 animate-float"></div>
-        <div className="bg-glow -bottom-32 -right-32 animate-float" style={{ animationDelay: '-10s' }}></div>
+      <div className="flex flex-col w-full min-h-screen relative overflow-hidden bg-white">
         <Navbar activeSection="projects" onNavigate={handleNavigate} />
         <main className="flex-1 mt-20">
           <SnapStoryDetails onBack={handleBackToHome} />
@@ -344,9 +343,7 @@ const App: React.FC = () => {
 
   if (currentView === 'synapse') {
     return (
-      <div className="flex flex-col w-full min-h-screen relative overflow-hidden bg-transparent">
-        <div className="bg-glow -top-32 -left-32 animate-float"></div>
-        <div className="bg-glow -bottom-32 -right-32 animate-float" style={{ animationDelay: '-10s' }}></div>
+      <div className="flex flex-col w-full min-h-screen relative overflow-hidden bg-white">
         <Navbar activeSection="projects" onNavigate={handleNavigate} />
         <main className="flex-1 mt-20">
           <SynapseDetails onBack={handleBackToHome} />
@@ -358,9 +355,7 @@ const App: React.FC = () => {
 
   if (currentView === 'memorysphere') {
     return (
-      <div className="flex flex-col w-full min-h-screen relative overflow-hidden bg-transparent">
-        <div className="bg-glow -top-32 -left-32 animate-float"></div>
-        <div className="bg-glow -bottom-32 -right-32 animate-float" style={{ animationDelay: '-10s' }}></div>
+      <div className="flex flex-col w-full min-h-screen relative overflow-hidden bg-white">
         <Navbar activeSection="projects" onNavigate={handleNavigate} />
         <main className="flex-1 mt-20">
           <MemorySphereDetails onBack={handleBackToHome} />
@@ -372,9 +367,7 @@ const App: React.FC = () => {
 
   if (currentView === 'cookwise') {
     return (
-      <div className="flex flex-col w-full min-h-screen relative overflow-hidden bg-transparent">
-        <div className="bg-glow -top-32 -left-32 animate-float"></div>
-        <div className="bg-glow -bottom-32 -right-32 animate-float" style={{ animationDelay: '-10s' }}></div>
+      <div className="flex flex-col w-full min-h-screen relative overflow-hidden bg-white">
         <Navbar activeSection="projects" onNavigate={handleNavigate} />
         <main className="flex-1 mt-20">
           <CookwiseDetails onBack={handleBackToHome} />
@@ -386,9 +379,7 @@ const App: React.FC = () => {
 
   if (currentView === 'aiworkplace') {
     return (
-      <div className="flex flex-col w-full min-h-screen relative overflow-hidden bg-transparent">
-        <div className="bg-glow -top-32 -left-32 animate-float"></div>
-        <div className="bg-glow -bottom-32 -right-32 animate-float" style={{ animationDelay: '-10s' }}></div>
+      <div className="flex flex-col w-full min-h-screen relative overflow-hidden bg-white">
         <Navbar activeSection="projects" onNavigate={handleNavigate} />
         <main className="flex-1 mt-20">
           <AiWorkplaceDetails onBack={handleBackToHome} />
@@ -399,47 +390,52 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="flex flex-col w-full min-h-screen relative overflow-hidden bg-transparent">
+    <div className="flex flex-col w-full min-h-screen relative overflow-hidden bg-white">
       {/* Persistant Animated Background Globs */}
-      <div className="bg-glow -top-32 -left-32 animate-float"></div>
-      <div className="bg-glow -bottom-32 -right-32 animate-float" style={{ animationDelay: '-10s' }}></div>
-      <div className="bg-glow top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20 animate-float" style={{ animationDelay: '-15s' }}></div>
       
       <Navbar activeSection={activeSection} onNavigate={handleNavigate} />
       
       <main className="flex-1">
-        <section id="home" className="w-full">
+        <section id="home" className="w-full bg-blue-50">
           <Hero />
         </section>
 
-        <section id="about" className="py-24 px-6 md:px-12 max-w-7xl mx-auto w-full reveal">
-          <About />
-        </section>
-
-        <section id="skills" className="py-24 px-6 md:px-12 max-w-7xl mx-auto w-full reveal">
-          <SkillsSection skills={skillsList} tools={toolsList} />
-        </section>
-
-        <section id="projects" className="py-24 px-6 md:px-12 max-w-7xl mx-auto w-full">
-          <div className="mb-16 reveal">
-            <h2 className="text-4xl md:text-6xl font-black font-heading text-slate-900 mb-6 tracking-tight drop-shadow-sm title-reveal">
-              Selected <span className="text-blue-600">Works</span>
-            </h2>
-            <p className="text-slate-600 text-lg font-light max-w-2xl">
-              Precision-engineered educational tools and interactive architectures.
-            </p>
+        <section id="about" className="py-24 w-full bg-white reveal">
+          <div className="px-6 md:px-12 max-w-7xl mx-auto w-full">
+            <About />
           </div>
-          <Projects projects={projectsData} onViewProject={handleViewProject} />
         </section>
 
-        <section id="experience" className="py-24 w-full reveal">
+        <section id="skills" className="py-24 w-full bg-violet-50 reveal">
+          <div className="px-6 md:px-12 max-w-7xl mx-auto w-full">
+            <SkillsSection skills={skillsList} tools={toolsList} />
+          </div>
+        </section>
+
+        <section id="projects" className="py-24 w-full bg-amber-50">
+          <div className="px-6 md:px-12 max-w-7xl mx-auto w-full">
+            <div className="mb-16 reveal">
+              <h2 className="text-4xl md:text-6xl font-black font-heading text-slate-900 mb-6 tracking-tight drop-shadow-sm title-reveal">
+                Selected <span className="text-amber-600">Works</span>
+              </h2>
+              <p className="text-slate-600 text-lg font-light max-w-2xl">
+                Precision-engineered educational tools and interactive architectures.
+              </p>
+            </div>
+            <Projects projects={projectsData} onViewProject={handleViewProject} />
+          </div>
+        </section>
+
+        <section id="experience" className="py-24 w-full bg-emerald-50 reveal">
           <div className="px-6 md:px-12 max-w-7xl mx-auto w-full">
             <ExperienceSection items={experienceData} />
           </div>
         </section>
 
-        <section id="education" className="py-24 px-6 md:px-12 max-w-7xl mx-auto w-full reveal mb-10">
-          <EducationSection items={educationData} />
+        <section id="education" className="py-24 w-full bg-white reveal mb-10">
+          <div className="px-6 md:px-12 max-w-7xl mx-auto w-full">
+            <EducationSection items={educationData} />
+          </div>
         </section>
       </main>
 
