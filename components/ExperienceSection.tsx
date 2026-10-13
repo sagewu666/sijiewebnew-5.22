@@ -1,94 +1,100 @@
 import React from 'react';
 import { Experience } from '../types';
 
-interface ExperienceProps { items: Experience[]; }
+interface ExperienceProps { 
+  items: Experience[]; 
+}
 
 export const ExperienceSection: React.FC<ExperienceProps> = ({ items }) => {
   return (
     <div className="w-full">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-        <div className="lg:col-span-4">
-          <span className="text-emerald-600 font-black text-[10px] tracking-[0.6em] uppercase mb-4 block">Fieldwork</span>
-          <h2 className="text-4xl md:text-6xl font-black font-heading tracking-wide text-slate-900 mb-4 leading-tight drop-shadow-sm title-reveal">
-            Educational <br /> Practice & <span className="text-emerald-600">Research.</span>
-          </h2>
-          <p className="text-slate-600 text-lg font-light max-w-sm tracking-wide">
-            Translating evidence-based pedagogical theories into high-impact digital learning tools.
-          </p>
+      {/* Section Header */}
+      <div className="mb-10">
+        <div className="inline-flex items-center gap-2 text-xs font-semibold text-emerald-900 bg-emerald-100 border border-emerald-300 rounded-full px-3.5 py-1 mb-3">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+          Fieldwork &amp; Academic Practice
         </div>
-        
-        <div className="lg:col-span-8 space-y-10">
-          {items.map((item, idx) => (
-            <div key={idx} className="bg-white border border-emerald-100 shadow-sm p-8 md:p-12 rounded-[40px] hover:shadow-2xl transition-all duration-700 group hover-3d  ">
-              <div className="flex flex-col md:flex-row md:items-baseline justify-between gap-4 mb-8">
+        <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900 tracking-tight mb-3">
+          Professional Experience
+        </h2>
+        <p className="text-slate-600 text-base max-w-2xl font-normal leading-relaxed">
+          Classroom instruction, instructional media production, and evidence-based learning research across academic institutions and public sector agencies.
+        </p>
+      </div>
+
+      {/* Experience Timeline - Solid white cards on solid pastel green background */}
+      <div className="space-y-5">
+        {items.map((item, idx) => {
+          return (
+            <div 
+              key={idx} 
+              className="p-6 md:p-8 rounded-2xl bg-white border border-emerald-200/90 shadow-xs hover:border-emerald-300 transition-all duration-200"
+            >
+              {/* Top Row: Role, Organization, Location, Period */}
+              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 pb-5 mb-5 border-b border-slate-100">
                 <div>
-                  <h4 className="text-2xl md:text-3xl font-black text-slate-900 group-hover:text-emerald-600 transition-colors tracking-wide">{item.role}</h4>
-                  <p className="text-emerald-600 font-bold tracking-wider mt-1">{item.organization}</p>
+                  <div className="flex flex-wrap items-center gap-2 mb-1.5">
+                    <h3 className="text-xl font-bold text-slate-900 tracking-tight">
+                      {item.role}
+                    </h3>
+                    {idx === 0 && (
+                      <span className="text-[11px] font-bold text-emerald-900 bg-emerald-100 px-2.5 py-0.5 rounded-md border border-emerald-300">
+                        Current / Active
+                      </span>
+                    )}
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-slate-700 font-medium">
+                    <span className="font-semibold text-slate-900">{item.organization}</span>
+                    {item.location && (
+                      <>
+                        <span className="text-slate-300">·</span>
+                        <span className="text-slate-500">{item.location}</span>
+                      </>
+                    )}
+                  </div>
                 </div>
-                {(item.period || item.location) && (
-                  <div className="flex flex-col items-start md:items-end shrink-0">
-                    {item.period && <span className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] whitespace-nowrap">{item.period}</span>}
-                    {item.location && <span className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mt-1 whitespace-nowrap">{item.location}</span>}
+
+                {item.period && (
+                  <div className="text-xs font-bold rounded-md px-3 py-1 self-start whitespace-nowrap bg-slate-50 text-slate-800 border border-slate-200">
+                    {item.period}
                   </div>
                 )}
               </div>
-              <div className="space-y-4">
-                {item.points.map((p, i) => (
-                  <div key={i} className="flex gap-4">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 mt-2.5 flex-shrink-0 animate-pulse"></span>
-                    <p className="text-base text-slate-600 font-medium leading-relaxed tracking-wide">
-                      {p}
-                    </p>
-                  </div>
+
+              {/* Bullets */}
+              <ul className="space-y-3 text-sm text-slate-700 leading-relaxed">
+                {item.points.map((p, pIdx) => (
+                  <li key={pIdx} className="flex items-start gap-3">
+                    <span className="w-2 h-2 rounded-full bg-emerald-600 mt-2 shrink-0" aria-hidden="true"></span>
+                    <span className="flex-1">{p}</span>
+                  </li>
                 ))}
-              </div>
-              
+              </ul>
+
+              {/* Video Showcase preview if available (NYC DOF) */}
               {item.videoUrl && (
-                <div className="mt-8 relative group cursor-pointer overflow-hidden rounded-3xl border border-white/60 shadow-lg hover:shadow-xl transition-all duration-500">
-                  <a href={item.videoUrl} target="_blank" rel="noopener noreferrer" className="block relative">
-                    <img 
-                      src={`https://img.youtube.com/vi/${item.videoUrl.match(/v=([^&]+)/)?.[1] || 'jVOfuIJJ9l8'}/maxresdefault.jpg`} 
-                      alt="Video Cover" 
-                      className="w-full h-auto object-cover group-hover:scale-105 group-hover:opacity-80 transition-all duration-700"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-16 h-16 bg-white/80   rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:bg-emerald-600 transition-all duration-300">
-                        <svg className="w-8 h-8 text-emerald-600 group-hover:text-slate-900 translate-x-0.5 transition-colors" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M8 5v14l11-7z" />
-                        </svg>
-                      </div>
+                <div className="mt-6 pt-5 border-t border-slate-100">
+                  <a 
+                    href={item.videoUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="inline-flex items-center gap-3 p-3.5 rounded-xl bg-slate-50 hover:bg-emerald-50/80 border border-slate-200 hover:border-emerald-300 transition-all text-xs font-semibold text-slate-800 hover:text-emerald-950 group shadow-2xs"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-xs">
+                      <svg className="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="font-bold text-slate-900 group-hover:text-emerald-950">Watch Instructional Video Series (NYC DOF)</div>
+                      <div className="text-[11px] text-slate-600">Public-facing CCA Tax Abatement guidance on YouTube · 5 Public &amp; 3 Internal Videos</div>
                     </div>
                   </a>
                 </div>
               )}
-              
-              {(item.tools || item.platform) && (
-                <div className="mt-8 flex flex-wrap gap-6 pt-6 border-t border-emerald-100">
-                  {item.tools && (
-                    <div className="flex flex-col gap-2">
-                      <span className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Tools</span>
-                      <div className="flex flex-wrap gap-2">
-                        {item.tools.map((t, i) => (
-                          <span key={i} className="text-xs px-3 py-1.5 rounded-xl bg-emerald-50 text-emerald-600 border border-emerald-200 font-bold">{t}</span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                  {item.platform && (
-                    <div className="flex flex-col gap-2">
-                      <span className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Platform</span>
-                      <div className="flex flex-wrap gap-2">
-                        {item.platform.map((p, i) => (
-                          <span key={i} className="text-xs px-3 py-1.5 rounded-xl bg-teal-50 text-teal-600 border border-teal-200 font-bold">{p}</span>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              )}
             </div>
-          ))}
-        </div>
+          );
+        })}
       </div>
     </div>
   );

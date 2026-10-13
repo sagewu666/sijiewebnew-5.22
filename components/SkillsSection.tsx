@@ -8,48 +8,73 @@ interface SkillsSectionProps {
 export const SkillsSection: React.FC<SkillsSectionProps> = ({ skills, tools }) => {
   return (
     <div className="w-full">
-      <div className="mb-12">
-        <span className="text-violet-600 font-black text-[10px] tracking-[0.6em] uppercase mb-4 block">Capabilities</span>
-        <h2 className="text-4xl md:text-6xl font-black font-heading tracking-wide text-slate-900 leading-tight drop-shadow-sm title-reveal">
-          Expertise & <br/><span className="text-violet-600">Toolkit.</span>
+      {/* Header */}
+      <div className="mb-10">
+        <div className="inline-flex items-center gap-2 text-xs font-semibold text-purple-900 bg-purple-100 border border-purple-300 rounded-full px-3.5 py-1 mb-3">
+          <span className="w-1.5 h-1.5 rounded-full bg-purple-600"></span>
+          Core Competencies
+        </div>
+        <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900 tracking-tight mb-3">
+          Skills &amp; Toolkit
         </h2>
+        <p className="text-slate-600 text-base max-w-2xl font-normal leading-relaxed">
+          A blend of evidence-centered instructional design methodologies, multimedia production workflows, and front-end interactive prototyping.
+        </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-        {/* Skills Column */}
-        <div className="bg-white border border-violet-100 shadow-sm p-10 rounded-[40px] hover:shadow-2xl transition-all duration-500 group flex flex-col justify-start hover-3d h-full">
-          <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 rounded-full bg-violet-100 flex items-center justify-center text-violet-600 border border-violet-200">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
-              </div>
-              <h3 className="text-2xl font-black text-slate-900 tracking-wide">Core Skills</h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Core Methodologies - Solid White Card on Pastel Purple Background */}
+        <div className="p-7 md:p-8 rounded-2xl bg-white border border-purple-200/90 shadow-xs hover:border-purple-300 transition-all">
+          <div className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+            <div className="w-9 h-9 rounded-xl bg-purple-100 text-purple-900 flex items-center justify-center font-bold text-sm border border-purple-200">
+              ID
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-slate-900">Instructional Design &amp; Pedagogy</h3>
+              <p className="text-xs text-purple-800 font-medium">Evidence-based learning frameworks &amp; analysis</p>
+            </div>
           </div>
-          <div className="space-y-6 flex-1 flex flex-col justify-center">
-              {skills.map((skill, idx) => (
-              <div key={idx} className="flex items-start gap-3">
-                  <span className="w-2 h-2 rounded-full bg-violet-500 mt-2 flex-shrink-0 animate-pulse"></span>
-                  <p className="text-slate-600 font-medium text-lg leading-snug tracking-wide">{skill}</p>
+          <div className="space-y-3.5">
+            {skills.map((skill, idx) => (
+              <div key={idx} className="flex items-start gap-2.5 text-sm text-slate-700">
+                <span className="w-2 h-2 rounded-full bg-purple-600 mt-2 shrink-0"></span>
+                <span className="font-medium leading-relaxed">{skill}</span>
               </div>
-              ))}
+            ))}
           </div>
         </div>
 
-        {/* Tools Column */}
-        <div className="bg-white border border-violet-100 shadow-sm p-10 rounded-[40px] hover:shadow-2xl transition-all duration-500 group flex flex-col justify-start hover-3d h-full">
-          <div className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-12 rounded-full bg-violet-100 flex items-center justify-center text-violet-600 border border-violet-200">
-               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
-            </div>
-            <h3 className="text-2xl font-black text-slate-900 tracking-wide">Digital Tools</h3>
-          </div>
-          
-          <div className="space-y-6 flex-1 flex flex-col justify-center">
-            {tools.map((tool, idx) => (
-              <div key={idx} className="flex items-start gap-3">
-                  <span className="w-2 h-2 rounded-full bg-violet-500 mt-2 flex-shrink-0 animate-pulse"></span>
-                  <p className="text-slate-600 font-medium text-lg leading-snug tracking-wide">{tool}</p>
+        {/* Digital Tools & Technologies - Solid White Card on Pastel Purple Background */}
+        <div className="p-7 md:p-8 rounded-2xl bg-white border border-purple-200/90 shadow-xs hover:border-purple-300 transition-all flex flex-col justify-between">
+          <div>
+            <div className="flex items-center gap-3 mb-6 pb-4 border-b border-slate-100">
+              <div className="w-9 h-9 rounded-xl bg-purple-100 text-purple-900 flex items-center justify-center font-bold text-sm border border-purple-200">
+                DT
               </div>
-            ))}
+              <div>
+                <h3 className="text-lg font-bold text-slate-900">Tools, Platforms &amp; Code</h3>
+                <p className="text-xs text-purple-800 font-medium">Authoring, prototyping, and media software</p>
+              </div>
+            </div>
+            
+            <div className="flex flex-wrap gap-2.5 mb-6">
+              {tools.map((tool, idx) => (
+                <span
+                  key={idx}
+                  className="px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-50 text-slate-800 border border-slate-200/80 hover:border-purple-300 hover:bg-purple-50 transition-all cursor-default shadow-2xs"
+                >
+                  {tool}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Workflow Callout */}
+          <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <div className="text-xs font-bold text-slate-900 mb-1">Production Pipeline</div>
+            <div className="text-xs text-slate-600 leading-relaxed">
+              From storyboard and scriptwriting in Figma to multi-cam video editing in Adobe Premiere Pro, and interactive prototyping with modern web standards.
+            </div>
           </div>
         </div>
       </div>

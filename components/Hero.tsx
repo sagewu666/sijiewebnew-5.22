@@ -1,68 +1,105 @@
-import React, { useRef } from 'react';
+import React from 'react';
 
 export const Hero: React.FC = () => {
-  const buttonRef = useRef<HTMLButtonElement>(null);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (!buttonRef.current) return;
-    const rect = buttonRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    buttonRef.current.style.setProperty('--x', `${x}px`);
-    buttonRef.current.style.setProperty('--y', `${y}px`);
-  };
-
   return (
-    <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-transparent">
-      {/* Background Elements */}
-      <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-blue-400/20 rounded-full blur-[120px] animate-float z-0"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-violet-400/20 rounded-full blur-[120px] animate-float z-0" style={{ animationDelay: '-5s' }}></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-[0.05] pointer-events-none animate-float z-0" style={{ animationDelay: '-10s' }}>
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#3b82f6" d="M44.7,-76.4C58.2,-69.3,69.7,-57.4,77.3,-43.3C84.9,-29.2,88.6,-12.9,87.6,3.1C86.7,19,81.1,34.7,71.5,47.7C61.8,60.8,48.1,71.2,33.1,76.6C18.1,81.9,1.9,82.3,-14.8,79.8C-31.5,77.3,-48.6,71.8,-61.7,60.8C-74.8,49.8,-83.8,33.3,-86.7,16C-89.6,-1.3,-86.3,-19.4,-77.9,-34.7C-69.5,-49.9,-55.9,-62.4,-41.2,-69C-26.6,-75.6,-10.9,-76.4,2.3,-80.4C15.4,-84.4,31.2,-83.5,44.7,-76.4Z" transform="translate(100 100)" />
-        </svg>
-      </div>
+    <div className="relative pt-32 pb-20 md:pt-40 md:pb-28 border-b border-slate-200 bg-white overflow-hidden">
+      {/* Subtle fine geometric grid pattern for architectural precision - no blur, no gradients */}
+      <div 
+        className="absolute inset-0 opacity-[0.035] pointer-events-none"
+        style={{
+          backgroundImage: `linear-gradient(#0f172a 1px, transparent 1px), linear-gradient(90deg, #0f172a 1px, transparent 1px)`,
+          backgroundSize: '36px 36px',
+        }}
+      />
 
-      <div className="container mx-auto px-6 relative z-10 text-center md:text-left">
-        <div className="max-w-6xl">
-          <div className="animate-hero-text">
-            <div className="inline-flex items-center gap-3 px-5 py-2 mb-10 rounded-full bg-white text-[11px] font-black tracking-[0.6em] text-blue-600 uppercase border border-blue-200">
-              <span className="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
-              EdTech Specialist
-            </div>
-            
-            <h1 className="text-6xl md:text-[7rem] lg:text-[8.5rem] font-black font-heading leading-[0.9] tracking-wide text-slate-900 mb-14 drop-shadow-xl">
-              INSTRUCTIONAL <br />
-              <span className="text-blue-600">DESIGNER</span>
-            </h1>
+      <div className="max-w-6xl mx-auto px-6 md:px-8 relative z-10">
+        <div className="max-w-3xl">
+          {/* Institution & Status Badge */}
+          <div className="inline-flex items-center gap-2 text-xs font-semibold text-blue-800 bg-blue-50 border border-blue-200 rounded-full px-3.5 py-1 mb-6 shadow-xs">
+            <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+            <span>Teachers College, Columbia University · M.A. Candidate</span>
           </div>
 
-          <div className="flex flex-col md:flex-row items-center md:items-start gap-12 animate-hero-text" style={{ animationDelay: '0.3s' }}>
-            <p className="text-slate-600 text-xl md:text-2xl font-light leading-relaxed max-w-xl tracking-wider">
-              Building precision digital learning architectures through cognitive engineering.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-6">
-              <button 
-                ref={buttonRef}
-                onMouseMove={handleMouseMove}
-                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-                className="btn-glow-interactive !bg-indigo-600 !text-slate-900 !border-indigo-500 hover:!bg-indigo-500"
-              >
-                VIEW PROJECTS
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
-                </svg>
-              </button>
-            </div>
+          {/* Headline - Solid crisp typography, zero gradient wash */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-heading tracking-tight text-slate-900 leading-[1.12] mb-6">
+            Instructional Designer &amp; <br className="hidden sm:inline" />
+            <span className="text-blue-700">
+              Learning Experience
+            </span> Technologist.
+          </h1>
+
+          {/* Subtitle / Value Proposition */}
+          <p className="text-lg md:text-xl text-slate-600 font-normal leading-relaxed mb-8 max-w-2xl">
+            Bridging evidence-based pedagogy, cognitive scaffolding, and interactive media to build structured, intuitive, and measurable learning architectures.
+          </p>
+
+          {/* Action CTAs */}
+          <div className="flex flex-wrap items-center gap-4 mb-14">
+            <button
+              onClick={() => {
+                const el = document.getElementById('projects');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-blue-700 text-white text-sm font-semibold transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5"
+            >
+              <span>Explore Projects</span>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={() => {
+                const el = document.getElementById('experience');
+                if (el) el.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-300 hover:border-slate-400 text-slate-700 hover:text-slate-900 text-sm font-semibold transition-all shadow-xs"
+            >
+              <span>View Experience</span>
+            </button>
+            <a
+              href="mailto:sagewu415@gmail.com"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-blue-700 px-3 py-2 transition-colors"
+            >
+              <svg className="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <span>sagewu415@gmail.com</span>
+            </a>
           </div>
         </div>
-      </div>
 
-      <div className="absolute bottom-12 left-6 md:left-12 flex flex-col items-start gap-6 opacity-50 animate-bounce">
-        <div className="w-[1px] h-20 bg-indigo-400"></div>
-        <span className="text-[10px] font-black text-blue-600 tracking-[0.8em] uppercase [writing-mode:vertical-lr]">Scroll</span>
+        {/* Credentials & Focus Grid - Clean solid containers, no blurry gradients */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 border-t border-slate-200">
+          {/* Card 1 */}
+          <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 shadow-xs hover:border-blue-300 transition-all">
+            <div className="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+              Academic Training
+            </div>
+            <div className="text-sm font-bold text-slate-900">Columbia University M.A.</div>
+            <div className="text-xs text-slate-600 mt-0.5">Instructional Technology &amp; Media · 4.0 GPA</div>
+          </div>
+
+          {/* Card 2 */}
+          <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 shadow-xs hover:border-purple-300 transition-all">
+            <div className="text-[11px] font-bold text-purple-700 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-purple-600"></span>
+              Course &amp; Lab Support
+            </div>
+            <div className="text-sm font-bold text-slate-900">Course Assistant</div>
+            <div className="text-xs text-slate-600 mt-0.5">Interactive Media Lab · Student Mentorship</div>
+          </div>
+
+          {/* Card 3 */}
+          <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 shadow-xs hover:border-emerald-300 transition-all">
+            <div className="text-[11px] font-bold text-emerald-700 uppercase tracking-wider mb-1 flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+              Fieldwork Impact
+            </div>
+            <div className="text-sm font-bold text-slate-900">NYC Dept of Finance Intern</div>
+            <div className="text-xs text-slate-600 mt-0.5">5 Public + 3 Internal Videos · Style Guide</div>
+          </div>
+        </div>
       </div>
     </div>
   );

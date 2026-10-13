@@ -1,59 +1,68 @@
 import React from 'react';
 
 export const Footer: React.FC = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <footer className="bg-slate-50   border-t border-slate-200 text-slate-900 py-24 px-6 md:px-12 w-full mt-auto reveal">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-16 mb-24">
-          <div className="max-w-2xl">
-            <h2 className="text-5xl md:text-[6rem] lg:text-[7.5rem] font-black font-heading tracking-wide mb-10 leading-[0.8] text-slate-900 title-reveal">
-              LET'S <br /><span className="text-blue-600">CONNECT.</span>
-            </h2>
-            <p className="text-slate-600 text-xl font-light leading-relaxed tracking-wide">
-              Open to collaborations on instructional systems design, learning data analysis, and educational research.
+    <footer className="bg-slate-900 text-white pt-16 pb-12 px-6 md:px-8 border-t border-slate-800">
+      <div className="max-w-6xl mx-auto">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 pb-12 border-b border-slate-800">
+          <div>
+            <div className="flex items-center gap-3 mb-2">
+              <span className="w-8 h-8 rounded-lg bg-blue-600 text-white font-heading font-bold text-sm flex items-center justify-center">
+                SW
+              </span>
+              <span className="text-xl font-bold font-heading text-white">Sijie Wu</span>
+            </div>
+            <p className="text-sm text-slate-400 max-w-md">
+              Instructional Designer &amp; Learning Experience Technologist. Master’s candidate at Teachers College, Columbia University.
             </p>
           </div>
-          
-          <div className="flex flex-col gap-10 w-full md:w-auto">
-            <div>
-              <span className="text-[10px] font-black text-blue-600 uppercase tracking-[0.4em] mb-4 block">Inquiries</span>
-              <a href="mailto:sagewu415@gmail.com" className="text-2xl md:text-3xl font-light hover:text-blue-700 transition-colors border-b border-slate-300 pb-2 tracking-wide text-slate-900">
-                sagewu415@gmail.com
-              </a>
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-6">
-              <a 
-                href="http://linkedin.com/in/sijie-w-2020b738b" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="btn-glow-interactive !bg-white !border-blue-200 !text-slate-600 hover:!text-slate-900 hover:!bg-blue-50 hover:!border-blue-300 hover:!text-blue-700"
-                onMouseMove={(e) => {
-                  const rect = e.currentTarget.getBoundingClientRect();
-                  const x = e.clientX - rect.left;
-                  const y = e.clientY - rect.top;
-                  e.currentTarget.style.setProperty('--x', `${x}px`);
-                  e.currentTarget.style.setProperty('--y', `${y}px`);
-                }}
-              >
-                LinkedIn Profile
-                <svg className="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-              </a>
-            </div>
+
+          <div className="flex flex-wrap items-center gap-4">
+            <a
+              href="mailto:sagewu415@gmail.com"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white text-xs font-semibold transition-colors border border-slate-700"
+            >
+              <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <span>sagewu415@gmail.com</span>
+            </a>
+            <a
+              href="http://linkedin.com/in/sijie-w-2020b738b"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold transition-colors shadow-xs"
+            >
+              <span>LinkedIn Profile</span>
+              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+            <button
+              onClick={scrollToTop}
+              className="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white transition-colors"
+              title="Scroll to top"
+              aria-label="Scroll to top"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+              </svg>
+            </button>
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center pt-12 border-t border-slate-200 gap-8">
-          <div className="flex items-center gap-3">
-             <div className="text-xl font-black font-heading tracking-[0.1em] uppercase text-slate-900">Sijie Wu</div>
-             <div className="w-1 h-1 rounded-full bg-slate-300"></div>
-             <div className="text-[9px] font-black tracking-[0.4em] uppercase text-slate-500">Design Portfolio</div>
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 text-xs text-slate-500">
+          <div>
+            &copy; {new Date().getFullYear()} Sijie Wu. All rights reserved.
           </div>
-          
-          <div className="text-[9px] font-black tracking-[0.3em] uppercase text-slate-500 flex gap-4">
-            <span>Columbia University</span>
-            <span>Teachers College</span>
-            <span className="text-blue-600">Instructional Designer</span>
+          <div className="flex items-center gap-4">
+            <span>New York, NY</span>
+            <span>·</span>
+            <span>Teachers College, Columbia University</span>
           </div>
         </div>
       </div>

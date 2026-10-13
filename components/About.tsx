@@ -2,42 +2,66 @@ import React from 'react';
 
 export const About: React.FC = () => {
   return (
-    <div className="flex flex-col items-center">
-      <div className="w-full space-y-16">
-        <header className="flex flex-col md:flex-row md:items-end justify-between gap-12">
-          <div className="max-w-3xl">
-            <span className="text-blue-600 font-black text-[10px] tracking-[0.6em] uppercase mb-4 block">Philosophy</span>
-            <h2 className="text-5xl md:text-8xl font-black font-heading text-slate-900 leading-[0.95] tracking-wide drop-shadow-sm title-reveal">
-              Efficiency through <br/><span className="text-blue-600">Precision.</span>
-            </h2>
-          </div>
-          
-          <div className="max-w-md space-y-6 text-slate-600 text-lg font-light leading-relaxed tracking-wide">
-            <p>
-              I am a Master’s candidate at <span className="font-bold text-slate-900 underline decoration-blue-400 underline-offset-4">Columbia University</span>. I specialize in designing instructional systems that leverage data analysis and interactive media to optimize human learning.
-            </p>
-            <p>
-              My work focuses on identifying interaction patterns that reduce cognitive friction. By merging evidence-based pedagogical theories with digital design, I create learning environments that are both intuitive and measurable.
-            </p>
-          </div>
-        </header>
+    <div className="w-full">
+      {/* Header */}
+      <div className="mb-10">
+        <div className="inline-flex items-center gap-2 text-xs font-semibold text-slate-800 bg-slate-100 border border-slate-300 rounded-full px-3.5 py-1 mb-3">
+          <span className="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
+          Pedagogical Philosophy
+        </div>
+        <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900 tracking-tight mb-3">
+          Bridging Learning Science &amp; Digital Media
+        </h2>
+        <p className="text-slate-600 text-base max-w-2xl font-normal leading-relaxed">
+          How evidence-centered design and learner empathy guide my instructional architecture.
+        </p>
+      </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-6">
-          <div className="p-10 bg-white border border-slate-200 shadow-sm rounded-[40px] shadow-sm hover:shadow-xl transition-all group hover-3d">
-            <div className="text-blue-600 mb-6 group-hover:scale-110 transition-transform origin-left">
-              <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9.663 17h4.674M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg>
-            </div>
-            <h4 className="text-xl font-black text-slate-900 mb-3 tracking-wide">Analysis Core</h4>
-            <p className="text-slate-600 font-light leading-relaxed tracking-wide">Qualitative Interaction Coding, Learning Analytics, and Evidence-centered Design methodologies.</p>
-          </div>
+      {/* Main Philosophy Card - Solid White Card on Clean Slate Section */}
+      <div className="p-8 md:p-10 rounded-2xl bg-white border border-slate-200 shadow-xs mb-6">
+        <div className="max-w-3xl space-y-4 text-base text-slate-700 leading-relaxed">
+          <p>
+            As a Master’s candidate in <strong className="text-slate-900 font-semibold">Instructional Technology &amp; Media at Columbia University</strong>, I focus on transforming abstract or complex subject matter into clear, intuitive, and measurable learning pathways.
+          </p>
+          <p>
+            Whether authoring public-facing instructional video series for the <strong className="text-slate-900 font-semibold">New York City Department of Finance</strong>, supporting graduate-level interactive media programming classes as a <strong className="text-slate-900 font-semibold">Course Assistant</strong>, or designing gesture-based learning platforms, my approach centers on eliminating extraneous cognitive load so learners can focus on deep conceptual understanding.
+          </p>
+        </div>
+      </div>
 
-          <div className="p-10 bg-white border border-slate-200 shadow-sm rounded-[40px] shadow-sm hover:shadow-xl transition-all group hover-3d">
-            <div className="text-blue-600 mb-6 group-hover:scale-110 transition-transform origin-left">
-              <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" /></svg>
-            </div>
-            <h4 className="text-xl font-black text-slate-900 mb-3 tracking-wide">Systems & UX</h4>
-            <p className="text-slate-600 font-light leading-relaxed tracking-wide">Interactive Media Programming, Instructional Scaffolding, and High-fidelity Learning Experience Design.</p>
+      {/* 3 Core Principles - Clean Solid White Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Principle 01 */}
+        <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-blue-300 transition-all">
+          <div className="w-8 h-8 rounded-lg bg-blue-50 text-blue-800 flex items-center justify-center font-bold text-xs border border-blue-200 mb-4">
+            01
           </div>
+          <h3 className="text-base font-bold text-slate-900 mb-2">Cognitive Scaffolding</h3>
+          <p className="text-sm text-slate-600 leading-relaxed">
+            Structuring modular learning sequences with progressive disclosure, lowering barriers to entry while supporting rigorous skill mastery.
+          </p>
+        </div>
+
+        {/* Principle 02 */}
+        <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-emerald-300 transition-all">
+          <div className="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-800 flex items-center justify-center font-bold text-xs border border-emerald-200 mb-4">
+            02
+          </div>
+          <h3 className="text-base font-bold text-slate-900 mb-2">Multimodal Learning</h3>
+          <p className="text-sm text-slate-600 leading-relaxed">
+            Integrating visual storytelling, clear video pacing, and interactive touchpoints to reinforce knowledge retention across diverse learner profiles.
+          </p>
+        </div>
+
+        {/* Principle 03 */}
+        <div className="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs hover:border-purple-300 transition-all">
+          <div className="w-8 h-8 rounded-lg bg-purple-50 text-purple-800 flex items-center justify-center font-bold text-xs border border-purple-200 mb-4">
+            03
+          </div>
+          <h3 className="text-base font-bold text-slate-900 mb-2">Accessibility &amp; Empathy</h3>
+          <p className="text-sm text-slate-600 leading-relaxed">
+            Engineering learning experiences compliant with Universal Design for Learning (UDL) and WCAG 2.1 AA standards, ensuring equity for every learner.
+          </p>
         </div>
       </div>
     </div>

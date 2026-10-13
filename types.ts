@@ -9,14 +9,19 @@ export interface Project {
   placeholderImg: string;
   genAiPrompt?: string; // New field for AI generation
   tech: string[];
+  technologies?: string[];
+  role?: string;
+  period?: string;
 }
 
 export interface Education {
   degree: string;
-  major?: string; // Added major field
+  major?: string;
   school: string;
   location: string;
   year: string;
+  gpa?: string;
+  courses?: string[];
   details: string[];
 }
 
