@@ -38,11 +38,6 @@ export const ExperienceSection: React.FC<ExperienceProps> = ({ items, onViewDof 
                     <h3 className="text-xl font-bold text-slate-900 tracking-tight">
                       {item.role}
                     </h3>
-                    {idx === 0 && (
-                      <span className="text-[11px] font-bold text-emerald-900 bg-emerald-100 px-2.5 py-0.5 rounded-md border border-emerald-300">
-                        Current / Active
-                      </span>
-                    )}
                   </div>
                   <div className="flex items-center gap-2 text-sm text-slate-700 font-medium">
                     <span className="font-semibold text-slate-900">{item.organization}</span>

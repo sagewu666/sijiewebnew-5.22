@@ -26,7 +26,6 @@ const App: React.FC = () => {
       title: "Cooperative & Condominium Abatement (CCA) Video Series",
       category: "Instructional Video",
       role: "NYC Department of Finance",
-      period: "06/2026 – 08/2026",
       description: "Developed a public-facing instructional video series to guide property owners and managing agents through the Cooperative and Condominium Abatement (CCA) online filing process, transforming complex tax policies into clear, learner-centered experiences.",
       points: [
         "Designed learner-centered instructional content that transformed complex tax policies and digital workflows into clear, accessible learning experiences.",
@@ -211,8 +210,19 @@ const App: React.FC = () => {
     }
   ];
 
-  // Experience Data with Columbia CA and NYC Department of Finance
+  // Experience Data with Columbia Higher Education Intern, Columbia CA, and NYC Department of Finance
   const experienceData: Experience[] = [
+    {
+      role: "Higher Education Intern",
+      organization: "Columbia University",
+      location: "New York, NY",
+      period: "11/2026 – 05/2027",
+      points: [
+        "Support the planning and coordination of academic and professional development events, including orientations, career seminars, networking events, and student/alumni engagement activities.",
+        "Assist with student services and career development initiatives, including speaker coordination, event logistics, and communication with students and alumni.",
+        "Maintain program materials and website content, collect participant feedback, and provide administrative support to improve program operations and student engagement."
+      ]
+    },
     {
       role: "Course Assistant",
       organization: "Teachers College, Columbia University",
