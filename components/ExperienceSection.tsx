@@ -3,9 +3,10 @@ import { Experience } from '../types';
 
 interface ExperienceProps { 
   items: Experience[]; 
+  onViewDof?: () => void;
 }
 
-export const ExperienceSection: React.FC<ExperienceProps> = ({ items }) => {
+export const ExperienceSection: React.FC<ExperienceProps> = ({ items, onViewDof }) => {
   return (
     <div className="w-full">
       {/* Section Header */}
@@ -73,23 +74,41 @@ export const ExperienceSection: React.FC<ExperienceProps> = ({ items }) => {
 
               {/* Video Showcase preview if available (NYC DOF) */}
               {item.videoUrl && (
-                <div className="mt-6 pt-5 border-t border-slate-100">
-                  <a 
-                    href={item.videoUrl} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="inline-flex items-center gap-3 p-3.5 rounded-xl bg-slate-50 hover:bg-emerald-50/80 border border-slate-200 hover:border-emerald-300 transition-all text-xs font-semibold text-slate-800 hover:text-emerald-950 group shadow-2xs"
-                  >
-                    <div className="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-xs">
-                      <svg className="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <div className="font-bold text-slate-900 group-hover:text-emerald-950">Watch Instructional Video Series (NYC DOF)</div>
-                      <div className="text-[11px] text-slate-600">Public-facing CCA Tax Abatement guidance on YouTube · 5 Public &amp; 3 Internal Videos</div>
-                    </div>
-                  </a>
+                <div className="mt-6 pt-5 border-t border-slate-100 flex flex-wrap items-center gap-3">
+                  {onViewDof ? (
+                    <button
+                      type="button"
+                      onClick={onViewDof}
+                      className="inline-flex items-center gap-3 p-3.5 rounded-xl bg-slate-50 hover:bg-emerald-50/80 border border-slate-200 hover:border-emerald-300 transition-all text-left text-xs font-semibold text-slate-800 hover:text-emerald-950 group shadow-2xs cursor-pointer"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-xs">
+                        <svg className="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <div className="font-bold text-slate-900 group-hover:text-emerald-950">View CCA Instructional Video Series (5 Videos &amp; Case Study)</div>
+                        <div className="text-[11px] text-slate-600">Preview all 5 public-facing YouTube tutorials, thumbnails &amp; project overview</div>
+                      </div>
+                    </button>
+                  ) : (
+                    <a 
+                      href={item.videoUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="inline-flex items-center gap-3 p-3.5 rounded-xl bg-slate-50 hover:bg-emerald-50/80 border border-slate-200 hover:border-emerald-300 transition-all text-xs font-semibold text-slate-800 hover:text-emerald-950 group shadow-2xs"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-emerald-600 text-white flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-xs">
+                        <svg className="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
+                      </div>
+                      <div>
+                        <div className="font-bold text-slate-900 group-hover:text-emerald-950">Watch Instructional Video Series (NYC DOF)</div>
+                        <div className="text-[11px] text-slate-600">Public-facing CCA Tax Abatement guidance on YouTube · 5 Public &amp; 3 Internal Videos</div>
+                      </div>
+                    </a>
+                  )}
                 </div>
               )}
             </div>

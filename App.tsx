@@ -12,28 +12,32 @@ import { SynapseDetails } from './components/SynapseDetails';
 import { MemorySphereDetails } from './components/MemorySphereDetails';
 import { CookwiseDetails } from './components/CookwiseDetails';
 import { AiWorkplaceDetails } from './components/AiWorkplaceDetails';
+import { DofDetails } from './components/DofDetails';
 import { Project, Education, Experience } from './types';
 
 const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState('home');
-  const [currentView, setCurrentView] = useState<'home' | 'snapstory' | 'synapse' | 'memorysphere' | 'cookwise' | 'aiworkplace'>('home');
+  const [currentView, setCurrentView] = useState<'home' | 'dof' | 'snapstory' | 'synapse' | 'memorysphere' | 'cookwise' | 'aiworkplace'>('home');
 
   // Initial Projects Data
   const initialProjectsData: Project[] = [
     {
       id: "nyc-dof-cca",
-      title: "PEA Summer Graduate Intern",
-      category: "Public Service",
-      description: "Led the development of 5 public-facing instructional videos and 3 internal training videos for the New York City Department of Finance, authoring 30+ scripts and establishing a standardized Video Style Guide to streamline production.",
+      title: "Cooperative & Condominium Abatement (CCA) Video Series",
+      category: "Instructional Video",
+      role: "NYC Department of Finance",
+      period: "06/2026 – 08/2026",
+      description: "Developed a public-facing instructional video series to guide property owners and managing agents through the Cooperative and Condominium Abatement (CCA) online filing process, transforming complex tax policies into clear, learner-centered experiences.",
       points: [
+        "Designed learner-centered instructional content that transformed complex tax policies and digital workflows into clear, accessible learning experiences.",
         "Led the development of 5 public-facing instructional videos and 3 internal training videos, authored 30+ scripts, and created a Video Style Guide to standardize visual design and production workflows.",
         "Collaborated with subject matter experts (SMEs), a graphic designer, and DOF leadership through multiple review cycles to gather requirements, incorporate feedback, and ensure content accuracy, consistency, and policy compliance.",
         "Mentored and supervised a high school intern by assigning production tasks, providing constructive feedback, and supporting the development of high-quality instructional videos."
       ],
       liveDemo: "",
-      videoUrl: "https://www.youtube.com/watch?v=jVOfuIJJ9l8&t=6s",
-      tech: ["Instructional Video", "Video Style Guide", "Public Service", "SME Collaboration", "Adobe PR", "Adobe PS"],
-      placeholderImg: "https://img.youtube.com/vi/jVOfuIJJ9l8/maxresdefault.jpg"
+      videoUrl: "https://youtu.be/No4ZcYjFO00?si=hGacXLUg5ZkDqMV7",
+      tech: ["Instructional Video", "Video Style Guide", "Scriptwriting", "SME Collaboration"],
+      placeholderImg: "https://i.ytimg.com/vi/No4ZcYjFO00/maxresdefault.jpg"
     },
     {
       id: "learning-synapse",
@@ -110,7 +114,10 @@ const App: React.FC = () => {
   const [projectsData] = useState<Project[]>(initialProjectsData);
 
   const handleViewProject = (projectId: string) => {
-    if (projectId === 'snap-story') {
+    if (projectId === 'nyc-dof-cca') {
+      setCurrentView('dof');
+      window.scrollTo(0, 0);
+    } else if (projectId === 'snap-story') {
       setCurrentView('snapstory');
       window.scrollTo(0, 0);
     } else if (projectId === 'learning-synapse') {
@@ -305,6 +312,18 @@ const App: React.FC = () => {
   };
 
   // Case Study Subviews
+  if (currentView === 'dof') {
+    return (
+      <div className="flex flex-col w-full min-h-screen bg-slate-50">
+        <Navbar activeSection="projects" onNavigate={handleNavigate} />
+        <main className="flex-1 mt-16">
+          <DofDetails onBack={handleBackToHome} />
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
   if (currentView === 'snapstory') {
     return (
       <div className="flex flex-col w-full min-h-screen bg-slate-50">
@@ -385,7 +404,7 @@ const App: React.FC = () => {
         {/* Experience & Fieldwork - Solid Pastel Light Green */}
         <section id="experience" className="py-20 md:py-24 w-full bg-emerald-50/70 border-b border-emerald-200/80">
           <div className="max-w-6xl mx-auto px-6 md:px-8">
-            <ExperienceSection items={experienceData} />
+            <ExperienceSection items={experienceData} onViewDof={() => handleViewProject('nyc-dof-cca')} />
           </div>
         </section>
 
