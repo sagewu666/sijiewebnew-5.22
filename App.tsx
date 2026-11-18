@@ -248,7 +248,7 @@ const App: React.FC = () => {
     {
       role: "Volunteer Learning Experience Designer",
       organization: "Marlene Yu Museum",
-      location: "Remote / Hybrid",
+      location: "",
       period: "02/2026 – 05/2026",
       points: [
         "Designed and developed an interactive self-guided tour web prototype for museum visitors, creating a digital platform to present artwork descriptions, background context, and extended content.",

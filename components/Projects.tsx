@@ -56,10 +56,6 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, onViewProject }) =
       {/* Header and Filter Controls */}
       <div className="flex flex-col xl:flex-row xl:items-end justify-between gap-6 mb-10 pb-6 border-b border-sky-200/80">
         <div>
-          <div className="inline-flex items-center gap-2 text-xs font-semibold text-sky-900 bg-sky-100 border border-sky-300 rounded-full px-3.5 py-1 mb-3">
-            <span className="w-1.5 h-1.5 rounded-full bg-sky-600"></span>
-            Portfolio Showcase
-          </div>
           <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900 tracking-tight">
             Selected Works
           </h2>
@@ -162,23 +158,15 @@ export const Projects: React.FC<ProjectsProps> = ({ projects, onViewProject }) =
                   </div>
                 )}
 
-                {/* Badge Overlay */}
-                <div className="absolute top-3 left-3 z-10 flex gap-2">
-                  <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-md bg-white text-slate-800 shadow-xs border border-slate-200">
-                    {project.category}
-                  </span>
-                </div>
               </div>
 
               {/* Content Block */}
               <div className="p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  {(project.role || project.period) ? (
-                    <div className="flex items-center justify-between text-xs text-slate-500 font-medium mb-1.5">
-                      <span>{project.role}</span>
-                      <span>{project.period}</span>
-                    </div>
-                  ) : null}
+                  <div className="flex items-center justify-between text-xs text-slate-500 font-medium mb-1.5">
+                    <span>{project.role || project.category}</span>
+                    {project.period && <span>{project.period}</span>}
+                  </div>
                   <h3 className="text-lg font-bold text-slate-900 tracking-tight leading-snug group-hover:text-blue-700 transition-colors">
                     {project.title}
                   </h3>

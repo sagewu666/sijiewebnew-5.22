@@ -103,14 +103,8 @@ export const DofDetails: React.FC<DofDetailsProps> = ({ onBack }) => {
 
         {/* Project Header */}
         <header className="bg-white rounded-2xl border border-sky-200/90 shadow-xs p-8 md:p-10 mb-8">
-          <div className="flex flex-wrap items-center gap-2.5 mb-4">
-            <span className="inline-flex items-center gap-2 text-xs font-semibold text-sky-900 bg-sky-100 border border-sky-300 rounded-full px-3.5 py-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-sky-600"></span>
-              Public Sector Instructional Media
-            </span>
-            <span className="text-xs font-semibold text-slate-600 bg-slate-100 border border-slate-200 rounded-full px-3 py-1">
-              06/2026 – 08/2026 · New York, NY
-            </span>
+          <div className="text-xs font-semibold text-slate-500 mb-3">
+            06/2026 – 08/2026 · New York, NY
           </div>
 
           <h1 className="text-3xl md:text-5xl font-bold font-heading text-slate-900 tracking-tight leading-tight mb-4">
@@ -229,7 +223,7 @@ export const DofDetails: React.FC<DofDetailsProps> = ({ onBack }) => {
                     <div className="absolute inset-0 bg-slate-950/35 group-hover:bg-slate-950/20 transition-colors"></div>
 
                     {/* Episode Badge */}
-                    <div className="absolute top-2.5 left-2.5 flex items-center gap-1.5">
+                    <div className="absolute top-2.5 left-2.5">
                       <span
                         className={`text-[11px] font-bold px-2.5 py-0.5 rounded-md border shadow-2xs ${
                           isSelected
@@ -238,9 +232,6 @@ export const DofDetails: React.FC<DofDetailsProps> = ({ onBack }) => {
                         }`}
                       >
                         Video {video.number}
-                      </span>
-                      <span className="text-[11px] font-semibold px-2 py-0.5 rounded-md bg-slate-900/85 text-white">
-                        {video.topic}
                       </span>
                     </div>
 

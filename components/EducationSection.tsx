@@ -10,16 +10,9 @@ export const EducationSection: React.FC<EducationProps> = () => {
     <div className="w-full">
       {/* Header */}
       <div className="mb-10">
-        <div className="inline-flex items-center gap-2 text-xs font-semibold text-amber-900 bg-amber-100 border border-amber-300 rounded-full px-3.5 py-1 mb-3">
-          <span className="w-1.5 h-1.5 rounded-full bg-amber-600"></span>
-          Academic Qualifications &amp; Credentials
-        </div>
-        <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900 tracking-tight mb-3">
+        <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900 tracking-tight">
           Education &amp; Credentials
         </h2>
-        <p className="text-slate-600 text-base max-w-2xl font-normal leading-relaxed">
-          Grounding learning experience design in empirical educational research, cognitive development, interactive media systems, and international academic training.
-        </p>
       </div>
 
       {/* TOP FLAGSHIP CARD: Teachers College, Columbia University */}
@@ -63,77 +56,49 @@ export const EducationSection: React.FC<EducationProps> = () => {
 
           {/* Right Column (7 cols): Featured Graduate Coursework Matrix */}
           <div className="lg:col-span-7">
-            <div className="flex items-center justify-between mb-4">
-              <div>
-                <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wider">
-                  Featured Graduate Coursework
-                </h4>
-                <p className="text-xs text-slate-500">
-                  Comprehensive curriculum spanning interactive computing, instructional systems &amp; learning organizations
-                </p>
-              </div>
-              <span className="text-[11px] font-semibold text-amber-900 bg-amber-50 border border-amber-200 px-2.5 py-1 rounded-md">
-                Columbia TC Core
-              </span>
+            <div className="mb-4">
+              <h4 className="text-sm font-bold text-slate-900 uppercase tracking-wider">
+                Courses
+              </h4>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {/* Course 1 */}
               <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/90 hover:border-amber-300 transition-colors">
-                <div className="flex items-center justify-between mb-1.5">
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-800 border border-blue-200">
-                    Tech &amp; Media
-                  </span>
-                </div>
                 <div className="text-xs font-bold text-slate-900 leading-snug">
                   Theory and Programming of Interactive Media
                 </div>
-                <p className="text-[11px] text-slate-600 mt-1 leading-relaxed">
+                <p className="text-[11px] text-slate-600 mt-1.5 leading-relaxed">
                   Interactive web architecture, DOM manipulation, computational thinking, and educational frontend engineering.
                 </p>
               </div>
 
               {/* Course 2 */}
               <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/90 hover:border-amber-300 transition-colors">
-                <div className="flex items-center justify-between mb-1.5">
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 border border-emerald-200">
-                    Instructional Design
-                  </span>
-                </div>
                 <div className="text-xs font-bold text-slate-900 leading-snug">
                   Instructional Design of EdTechnology
                 </div>
-                <p className="text-[11px] text-slate-600 mt-1 leading-relaxed">
+                <p className="text-[11px] text-slate-600 mt-1.5 leading-relaxed">
                   ADDIE framework, cognitive load theory, formative/summative evaluation, and evidence-centered learning scaffolding.
                 </p>
               </div>
 
               {/* Course 3 */}
               <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/90 hover:border-amber-300 transition-colors">
-                <div className="flex items-center justify-between mb-1.5">
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-100 text-purple-800 border border-purple-200">
-                    Adult Learning
-                  </span>
-                </div>
                 <div className="text-xs font-bold text-slate-900 leading-snug">
                   Staff Development and Training
                 </div>
-                <p className="text-[11px] text-slate-600 mt-1 leading-relaxed">
+                <p className="text-[11px] text-slate-600 mt-1.5 leading-relaxed">
                   Organizational needs assessment, adult learning paradigms, corporate training pipelines, and competency benchmarks.
                 </p>
               </div>
 
               {/* Course 4 */}
               <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/90 hover:border-amber-300 transition-colors">
-                <div className="flex items-center justify-between mb-1.5">
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-900 border border-amber-200">
-                    Workplace Systems
-                  </span>
-                </div>
                 <div className="text-xs font-bold text-slate-900 leading-snug">
                   The Learning Org: Digital Workplace
                 </div>
-                <p className="text-[11px] text-slate-600 mt-1 leading-relaxed">
+                <p className="text-[11px] text-slate-600 mt-1.5 leading-relaxed">
                   Knowledge management architectures, collaborative workflows, digital tooling adoption, and systemic organizational learning.
                 </p>
               </div>

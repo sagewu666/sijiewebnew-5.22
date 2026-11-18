@@ -11,16 +11,9 @@ export const ExperienceSection: React.FC<ExperienceProps> = ({ items, onViewDof 
     <div className="w-full">
       {/* Section Header */}
       <div className="mb-10">
-        <div className="inline-flex items-center gap-2 text-xs font-semibold text-emerald-900 bg-emerald-100 border border-emerald-300 rounded-full px-3.5 py-1 mb-3">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
-          Fieldwork &amp; Academic Practice
-        </div>
-        <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900 tracking-tight mb-3">
+        <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900 tracking-tight">
           Professional Experience
         </h2>
-        <p className="text-slate-600 text-base max-w-2xl font-normal leading-relaxed">
-          Classroom instruction, instructional media production, and evidence-based learning research across academic institutions and public sector agencies.
-        </p>
       </div>
 
       {/* Experience Timeline - Solid white cards on solid pastel green background */}

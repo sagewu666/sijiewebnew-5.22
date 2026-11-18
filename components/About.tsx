@@ -5,16 +5,9 @@ export const About: React.FC = () => {
     <div className="w-full">
       {/* Header */}
       <div className="mb-10">
-        <div className="inline-flex items-center gap-2 text-xs font-semibold text-slate-800 bg-slate-100 border border-slate-300 rounded-full px-3.5 py-1 mb-3">
-          <span className="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-          Pedagogical Philosophy
-        </div>
-        <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900 tracking-tight mb-3">
+        <h2 className="text-3xl md:text-4xl font-bold font-heading text-slate-900 tracking-tight">
           Bridging Learning Science &amp; Digital Media
         </h2>
-        <p className="text-slate-600 text-base max-w-2xl font-normal leading-relaxed">
-          How evidence-centered design and learner empathy guide my instructional architecture.
-        </p>
       </div>
 
       {/* Main Philosophy Card - Solid White Card on Clean Slate Section */}

@@ -14,11 +14,10 @@ export const Hero: React.FC = () => {
 
       <div className="max-w-6xl mx-auto px-6 md:px-8 relative z-10">
         <div className="max-w-3xl">
-          {/* Institution & Status Badge */}
-          <div className="inline-flex items-center gap-2 text-xs font-semibold text-blue-800 bg-blue-50 border border-blue-200 rounded-full px-3.5 py-1 mb-6 shadow-xs">
-            <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
-            <span>Teachers College, Columbia University · M.A. Candidate</span>
-          </div>
+          {/* Institution Label */}
+          <p className="text-xs font-semibold tracking-wide uppercase text-blue-700 mb-4">
+            Teachers College, Columbia University · M.A. Candidate
+          </p>
 
           {/* Headline - Solid crisp typography, zero gradient wash */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-heading tracking-tight text-slate-900 leading-[1.12] mb-6">
@@ -40,7 +39,7 @@ export const Hero: React.FC = () => {
                 const el = document.getElementById('projects');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-blue-700 text-white text-sm font-semibold transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-blue-700 text-white text-sm font-semibold transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 cursor-pointer"
             >
               <span>Explore Projects</span>
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -52,7 +51,7 @@ export const Hero: React.FC = () => {
                 const el = document.getElementById('experience');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-300 hover:border-slate-400 text-slate-700 hover:text-slate-900 text-sm font-semibold transition-all shadow-xs"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-300 hover:border-slate-400 text-slate-700 hover:text-slate-900 text-sm font-semibold transition-all shadow-xs cursor-pointer"
             >
               <span>View Experience</span>
             </button>
@@ -68,36 +67,21 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* Credentials & Focus Grid - Clean solid containers, no blurry gradients */}
+        {/* Credentials & Focus Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-8 border-t border-slate-200">
-          {/* Card 1 */}
-          <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 shadow-xs hover:border-blue-300 transition-all">
-            <div className="text-[11px] font-bold text-blue-700 uppercase tracking-wider mb-1 flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-600"></span>
-              Academic Training
-            </div>
+          <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 shadow-xs">
             <div className="text-sm font-bold text-slate-900">Columbia University M.A.</div>
-            <div className="text-xs text-slate-600 mt-0.5">Instructional Technology &amp; Media · 4.0 GPA</div>
+            <div className="text-xs text-slate-600 mt-1">Instructional Technology &amp; Media · 4.0 GPA</div>
           </div>
 
-          {/* Card 2 */}
-          <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 shadow-xs hover:border-purple-300 transition-all">
-            <div className="text-[11px] font-bold text-purple-700 uppercase tracking-wider mb-1 flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-purple-600"></span>
-              Course &amp; Lab Support
-            </div>
+          <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 shadow-xs">
             <div className="text-sm font-bold text-slate-900">Course Assistant</div>
-            <div className="text-xs text-slate-600 mt-0.5">Interactive Media Lab · Student Mentorship</div>
+            <div className="text-xs text-slate-600 mt-1">Interactive Media Lab · Student Mentorship</div>
           </div>
 
-          {/* Card 3 */}
-          <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 shadow-xs hover:border-emerald-300 transition-all">
-            <div className="text-[11px] font-bold text-emerald-700 uppercase tracking-wider mb-1 flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
-              Fieldwork Impact
-            </div>
+          <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 shadow-xs">
             <div className="text-sm font-bold text-slate-900">NYC Dept of Finance Intern</div>
-            <div className="text-xs text-slate-600 mt-0.5">5 Public + 3 Internal Videos · Style Guide</div>
+            <div className="text-xs text-slate-600 mt-1">5 Public + 3 Internal Videos · Style Guide</div>
           </div>
         </div>
       </div>
